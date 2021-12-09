@@ -8,7 +8,7 @@ A mockup of the desired application can be viewed here: https://www.figma.com/pr
 
 It is not important to spend to much effort on making it pixel perfect / pretty. However clean code is required.
 
-### Suggetsed Steps:
+### Suggested Steps:
 0. fork this repository
 1. Create a new [blitzjs](https://blitzjs.com/) application in a folder called 'app'
 
