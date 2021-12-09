@@ -6,7 +6,7 @@ You will build a blitz.js app (please do not use any other framework)
 The goal is to build a simple kanban board for tasks with blitz.js
 A mockup of the desired application can be viewed here: https://www.figma.com/proto/0xJQoSwac1czDBWqR5rMz4/Simple-Kanban-App?node-id=2%3A1048&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=2%3A1048
 
-It is not important to spend to much effort on making it pixel perfect / pretty.
+It is not important to spend to much effort on making it pixel perfect / pretty. However clean code is required.
 
 ### Suggetsed Steps:
 0. fork this repository
