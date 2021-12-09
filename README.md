@@ -1,4 +1,4 @@
-# Developer Test: Build a simple Kanban Board app with Blitz JS 
+# Frontend Dev Test: Build a simple Kanban Board app with Blitz JS 
 
 ## Instructions
 You will build a blitz.js app (please do not use any other framework)
