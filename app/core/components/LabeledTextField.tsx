@@ -11,10 +11,11 @@ export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElem
   outerProps?: PropsWithoutRef<JSX.IntrinsicElements["div"]>
   labelProps?: ComponentPropsWithoutRef<"label">
   fieldProps?: UseFieldConfig<string>
+  textarea?: boolean
 }
 
 export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldProps>(
-  ({ name, label, outerProps, fieldProps, labelProps, ...props }, ref) => {
+  ({ name, label, outerProps, textarea, fieldProps, labelProps, ...props }, ref) => {
     const {
       input,
       meta: { touched, error, submitError, submitting },
@@ -30,34 +31,31 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
     const normalizedError = Array.isArray(error) ? error.join(", ") : error || submitError
 
     return (
-      <div {...outerProps}>
+      <div {...outerProps} className="mb-3 flex-1">
         <label {...labelProps}>
           {label}
-          <input {...input} disabled={submitting} {...props} ref={ref} />
+          {!textarea ? (
+            <input
+              {...input}
+              disabled={submitting}
+              {...props}
+              ref={ref}
+              className="block my-1 p-2 focus:shadow-inner focus:outline-none w-full rounded border border-gray-300"
+            />
+          ) : (
+            <textarea
+              {...input}
+              disabled={submitting}
+              className="block my-1 p-2 focus:shadow-inner focus:outline-none w-full rounded border border-gray-300"
+            ></textarea>
+          )}
         </label>
 
         {touched && normalizedError && (
-          <div role="alert" style={{ color: "red" }}>
+          <div role="alert" className="text-red-500 text-sm">
             {normalizedError}
           </div>
         )}
-
-        <style jsx>{`
-          label {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            font-size: 1rem;
-          }
-          input {
-            font-size: 1rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            border: 1px solid purple;
-            appearance: none;
-            margin-top: 0.5rem;
-          }
-        `}</style>
       </div>
     )
   }

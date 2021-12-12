@@ -12,13 +12,14 @@ export const LoginForm = (props: LoginFormProps) => {
   const [loginMutation] = useMutation(login)
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="w-screen min-h-screen flex items-center justify-center flex-col bg-gray-200">
+      <h1 className="text-3xl font-light mb-3">Login</h1>
 
       <Form
+        className="bg-white px-12 py-6 w-11/12 max-w-xl rounded-md"
         submitText="Login"
         schema={Login}
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ username: "", password: "" }}
         onSubmit={async (values) => {
           try {
             const user = await loginMutation(values)
@@ -35,18 +36,9 @@ export const LoginForm = (props: LoginFormProps) => {
           }
         }}
       >
-        <LabeledTextField name="email" label="Email" placeholder="Email" />
+        <LabeledTextField name="username" label="Username" placeholder="Username" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
-        <div>
-          <Link href={Routes.ForgotPasswordPage()}>
-            <a>Forgot your password?</a>
-          </Link>
-        </div>
       </Form>
-
-      <div style={{ marginTop: "1rem" }}>
-        Or <Link href={Routes.SignupPage()}>Sign Up</Link>
-      </div>
     </div>
   )
 }
