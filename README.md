@@ -38,4 +38,10 @@ npm run dev
 
 6. Open in your browser http://localhost:3000
 
+7. Login with 
+```
+username: admin
+password: password
+```
+
 Thank you very much.
