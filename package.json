@@ -8,8 +8,7 @@
     "migrate": "blitz prisma migrate dev",
     "seed": "blitz db seed",
     "studio": "blitz prisma studio",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
-    "prepare": "husky install"
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx ."
   },
   "prisma": {
     "schema": "db/schema.prisma"
