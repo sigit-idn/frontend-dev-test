@@ -17,19 +17,31 @@ I have done the test to create kanban board app with BlitzJS.
 DATABASE_URL=postgresql://{your_username}:{your_password}@localhost:5432/frontend_dev_test
 ```
 
-3. Run migration then run seeder:
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+4. Run migration then run seeder:
 
 ```bash
 npm run migrate
 npm run seed
 ```
 
-4. Then run the development server
+5. Then run the development server
 
 ```bash
 npm run dev
 ```
 
-5. Open in your browser http://localhost:3000
+6. Open in your browser http://localhost:3000
+
+7. Login with 
+```
+username: admin
+password: password
+```
 
 Thank you very much.
